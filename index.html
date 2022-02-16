@@ -1,233 +1,278 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Title-->
     <title>Discord | Your place to talk and hang out</title>
-    <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="main.css"> 
-</head>
+    <!--Favicon-->
+    <link
+      rel="shortcut icon"
+      href="https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<body>
-
+  <body>
     <section class="hero">
-        <header class="main-header container">
-            <nav class="main-nav">
-                <a href="index.html" class="logo">
-                    <img src="./assets/images/logo.svg" alt="">
-                </a> 
+      <header class="main-header container">
+        <nav class="main-nav">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.svg" alt="" />
+          </a>
 
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Why Discord?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Nitro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Safety</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Support</a>
-                    </li>
-                </ul>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Download</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Why Discord?</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Nitro</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Safety</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Support</a>
+            </li>
+          </ul>
 
-                <div class="nav-items-right">
-                    <a href="#" class="btn btn-small btn-light btn-login">
-                        Open Discord
-                    </a>
-                    <span class="mobile-toggle">
-                        <i class="bx bx-menu btn-open"></i>
-                        <i class="bx bx-x btn-close"></i>
-                    </span>
-                </div>
-            </nav>
-        </header>
+          <div class="nav-items-right">
+            <a href="#" class="btn btn-small btn-light btn-login">
+              Open Discord
+            </a>
+            <span class="mobile-toggle">
+              <i class="bx bx-menu btn-open"></i>
+              <i class="bx bx-x btn-close"></i>
+            </span>
+          </div>
+        </nav>
+      </header>
 
-        <div class="row container">
-            <div class="hero-content-wrap">
-                <h1 class="title primary-title">
-                    IMAGINE A PLACE...
-                </h1>
-                <p class="hero-description">
-                    where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.
-                </p>
-                
-                <div class="hero-btn-group">
-                    <a href="#" class="btn btn-large btn-light">
-                        <i class="bx bx-download"></i>Download for Windows
-                    </a>
-                    <a href="#" class="btn btn-large btn-dark">
-                        Open Discord in your browser
-                    </a>
-                </div>
-            </div>
+      <div class="row container">
+        <div class="hero-content-wrap">
+          <h1 class="title primary-title">IMAGINE A PLACE...</h1>
+          <p class="hero-description">
+            where you can belong to a school club, a gaming group, or a
+            worldwide art community. Where just you and a handful of friends can
+            spend time together. A place that makes it easy to talk every day
+            and hang out more often.
+          </p>
+
+          <div class="hero-btn-group">
+            <a href="#" class="btn btn-large btn-light">
+              <i class="bx bx-download"></i>Download for Windows
+            </a>
+            <a href="#" class="btn btn-large btn-dark">
+              Open Discord in your browser
+            </a>
+          </div>
         </div>
+      </div>
     </section>
-
 
     <section class="collaboration">
-        <div class="row container">
-            <img src="./assets/images/section-1.svg" alt="" class="grid-image">
-            <div class="text-group">
-                <h2 class="title secondary-title">
-                    Create an invite-only place where you belong
-                </h2>
-                <p>Discord servers are organized into topic-based channels where you can collaborate, share, and just talk about your day without clogging up a group chat</p>
-            </div>
+      <div class="row container">
+        <img src="./assets/images/section-1.svg" alt="" class="grid-image" />
+        <div class="text-group">
+          <h2 class="title secondary-title">
+            Create an invite-only place where you belong
+          </h2>
+          <p>
+            Discord servers are organized into topic-based channels where you
+            can collaborate, share, and just talk about your day without
+            clogging up a group chat
+          </p>
         </div>
+      </div>
     </section>
 
-    <svg class="wave" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">-->
-        <path class="wave-path" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="currentColor"></path>
-     </svg>
+    <svg
+      class="wave"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 100"
+      preserveAspectRatio="none"
+    >
+      -->
+      <path
+        class="wave-path"
+        d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"
+        fill="currentColor"
+      ></path>
+    </svg>
 
-
-     <section class="voice-channel">
-        <div class="row container">
-            <img src="./assets/images/section-2.svg" alt="" class="grid-image order-2">
-            <div class="text-group order-1">
-                <h2 class="title secondary-title">
-                    Where hanging out is easy
-                </h2>
-                <p>Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call</p>
-            </div>
+    <section class="voice-channel">
+      <div class="row container">
+        <img
+          src="./assets/images/section-2.svg"
+          alt=""
+          class="grid-image order-2"
+        />
+        <div class="text-group order-1">
+          <h2 class="title secondary-title">Where hanging out is easy</h2>
+          <p>
+            Grab a seat in a voice channel when you’re free. Friends in your
+            server can see you’re around and instantly pop in to talk without
+            having to call
+          </p>
         </div>
-     </section>
+      </div>
+    </section>
 
-     <svg class="wave wave-inverted" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">-->
-        <path class="wave-path" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="currentColor"></path>
-     </svg>
+    <svg
+      class="wave wave-inverted"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 100"
+      preserveAspectRatio="none"
+    >
+      -->
+      <path
+        class="wave-path"
+        d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"
+        fill="currentColor"
+      ></path>
+    </svg>
 
-
-     <section class="moderation-tools">
-        <div class="row container">
-            <img src="./assets/images/section-3.svg" alt="" class="grid-image order-2">
-            <div class="text-group order-1">
-                <h2 class="title secondary-title">
-                    From few to a fandom
-                </h2>
-                <p>Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.</p>
-            </div>
+    <section class="moderation-tools">
+      <div class="row container">
+        <img
+          src="./assets/images/section-3.svg"
+          alt=""
+          class="grid-image order-2"
+        />
+        <div class="text-group order-1">
+          <h2 class="title secondary-title">From few to a fandom</h2>
+          <p>
+            Get any community running with moderation tools and custom member
+            access. Give members special powers, set up private channels, and
+            more.
+          </p>
         </div>
-     </section>
+      </div>
+    </section>
 
-     <svg class="wave" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">-->
-        <path class="wave-path" d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z" fill="currentColor"></path>
-     </svg>
+    <svg
+      class="wave"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 100"
+      preserveAspectRatio="none"
+    >
+      -->
+      <path
+        class="wave-path"
+        d="M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z"
+        fill="currentColor"
+      ></path>
+    </svg>
 
+    <section class="video-call">
+      <div class="row container">
+        <div class="text-group">
+          <h2 class="title secondary-title">RELIABLE TECH FOR STAYING CLOSE</h2>
+          <p>
+            Low-latency voice and video feels like you’re in the same room. Wave
+            hello over video, watch friends stream their games, or gather up and
+            have a drawing session with screen share.
+          </p>
+        </div>
+        <img src="./assets/images/section-4.svg" alt="" class="grid-image" />
+      </div>
+    </section>
 
-     <section class="video-call">
-         <div class="row container">
-             <div class="text-group">
-                <h2 class="title secondary-title">
-                    RELIABLE TECH FOR STAYING CLOSE
-                </h2>
-                <p>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</p>
-                
-             </div>
-             <img src="./assets/images/section-4.svg" alt="" class="grid-image">
-         </div>
-     </section>
+    <section class="download">
+      <div class="row container remove-grid">
+        <img src="./assets/images/sparkles.svg" alt="" class="sparkles" />
+        <h2>Ready to start your journey?</h2>
+        <a href="#" class="btn btn-large btn-brand">
+          <i class="bx bx-download"></i>Download for Windows
+        </a>
+      </div>
+    </section>
 
+    <footer class="main-footer">
+      <div class="row container">
+        <div class="info-box">
+          <h4 class="footer-title">IMAGINE A PLACE</h4>
+          <div class="languages">
+            <img src="./assets/images/flag.png" alt="" />
+            <span>English, USA</span><i class="bx bx-chevron-down"></i>
+          </div>
+          <div class="social-media">
+            <a href="#" class="sm-link">
+              <i class="bx bxl-twitter"> </i>
+            </a>
+            <a href="#" class="sm-link">
+              <i class="bx bxl-instagram"> </i>
+            </a>
+            <a href="#" class="sm-link">
+              <i class="bx bxl-facebook-square"> </i>
+            </a>
+            <a href="#" class="sm-link">
+              <i class="bx bxl-youtube"> </i>
+            </a>
+          </div>
+        </div>
 
-     <section class="download">
-         <div class="row container remove-grid">
-             <img src="./assets/images/sparkles.svg" alt="" class="sparkles">
-             <h2>Ready to start your journey?</h2>
-             <a href="#" class="btn btn-large btn-brand">
-                 <i class="bx bx-download"></i>Download for Windows
-             </a> 
+        <div class="spacer"></div>
+        <div class="footer-links-group">
+          <h5 class="footer-title">Product</h5>
+          <a href="#" class="footer-link">Download</a>
+          <a href="#" class="footer-link">Nitro</a>
+          <a href="#" class="footer-link">Status</a>
+        </div>
 
-         </div>
-     </section>
+        <div class="footer-links-group">
+          <h5 class="footer-title">Company</h5>
+          <a href="#" class="footer-link">About</a>
+          <a href="#" class="footer-link">Jobs</a>
+          <a href="#" class="footer-link">Branding</a>
+          <a href="#" class="footer-link">Newsroom</a>
+        </div>
 
-     <footer class="main-footer">
-         <div class="row container">
-             <div class="info-box">
-                 <h4 class="footer-title">IMAGINE A PLACE</h4>
-                 <div class="languages">
-                     <img src="./assets/images/flag.png" alt="">
-                     <span>English, USA</span><i class="bx bx-chevron-down"></i>
-                 </div>
-                 <div class="social-media">
-                     <a href="#" class="sm-link">
-                         <i class="bx bxl-twitter"> </i>
-                     </a>
-                     <a href="#" class="sm-link">
-                        <i class="bx bxl-instagram"> </i>
-                    </a>
-                    <a href="#" class="sm-link">
-                        <i class="bx bxl-facebook-square"> </i>
-                    </a>
-                    <a href="#" class="sm-link">
-                        <i class="bx bxl-youtube"> </i>
-                    </a>
-                 </div>
-             </div>
+        <div class="footer-links-group">
+          <h5 class="footer-title">Resources</h5>
+          <a href="#" class="footer-link">College</a>
+          <a href="#" class="footer-link">Support</a>
+          <a href="#" class="footer-link">Safety</a>
+          <a href="#" class="footer-link">blog</a>
+          <a href="#" class="footer-link">Feedback</a>
+          <a href="#" class="footer-link">Developers</a>
+          <a href="#" class="footer-link">StreamKit</a>
+        </div>
 
-             <div class="spacer"></div>
-                 <div class="footer-links-group">
-                     <h5 class="footer-title">
-                         Product
-                     </h5>
-                     <a href="#" class="footer-link">Download</a>
-                     <a href="#" class="footer-link">Nitro</a>
-                     <a href="#" class="footer-link">Status</a>
-                 </div>
+        <div class="footer-links-group">
+          <h5 class="footer-title">Policies</h5>
+          <a href="#" class="footer-link">Terms</a>
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Guidelines</a>
+          <a href="#" class="footer-link">Acknowledgements</a>
+          <a href="#" class="footer-link">Licenses</a>
+          <a href="#" class="footer-link">Moderation</a>
+        </div>
 
-                 <div class="footer-links-group">
-                    <h5 class="footer-title">
-                        Company
-                    </h5>
-                    <a href="#" class="footer-link">About</a>
-                    <a href="#" class="footer-link">Jobs</a>
-                    <a href="#" class="footer-link">Branding</a>
-                    <a href="#" class="footer-link">Newsroom</a>
-                </div>
+        <div class="divider"></div>
+      </div>
 
-                <div class="footer-links-group">
-                    <h5 class="footer-title">
-                        Resources
-                    </h5>
-                    <a href="#" class="footer-link">College</a>
-                    <a href="#" class="footer-link">Support</a>
-                    <a href="#" class="footer-link">Safety</a>
-                    <a href="#" class="footer-link">blog</a>
-                    <a href="#" class="footer-link">Feedback</a>
-                    <a href="#" class="footer-link">Developers</a>
-                    <a href="#" class="footer-link">StreamKit</a>
-                </div>
-
-                <div class="footer-links-group">
-                    <h5 class="footer-title">
-                        Policies
-                    </h5>
-                    <a href="#" class="footer-link">Terms</a>
-                    <a href="#" class="footer-link">Privacy</a>
-                    <a href="#" class="footer-link">Guidelines</a>
-                    <a href="#" class="footer-link">Acknowledgements</a>
-                    <a href="#" class="footer-link">Licenses</a>
-                    <a href="#" class="footer-link">Moderation</a>
-                </div>
-
-                <div class="divider"></div>
-             </div>
-
-             <div class="row container remove-grid">
-                 <a href="index.html" class="logo">
-                     <img src="./assets/images/logo.svg" alt="">
-                 </a>
-                 <a href="" class="btn btn-small btn-brand">Open Discord</a>
-             </div>
-
-     </footer>
-
-</body>
+      <div class="row container remove-grid">
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" alt="" />
+        </a>
+        <a href="" class="btn btn-small btn-brand">Open Discord</a>
+      </div>
+    </footer>
+  </body>
 </html>
